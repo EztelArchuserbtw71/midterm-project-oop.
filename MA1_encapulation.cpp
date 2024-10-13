@@ -4,7 +4,7 @@
 #include <limits>
 
 using namespace std;
-
+//class items
 class Item {
 private:
     string id;
@@ -58,12 +58,12 @@ public:
              << setw(10) << left << quantity << endl;
     }
 };
-
+//class invetories
 class Inventory {
 private:
     Item* items[100];
     int itemCount;
-
+//merge sort i use as my sorting algorithm thanks DSA!!
     void merge(Item* arr[], int left, int mid, int right, int sortBy) {
         int n1 = mid - left + 1;
         int n2 = right - mid;
@@ -363,7 +363,7 @@ public:
              << setw(10) << left << "Quantity" << endl;
 
         for (int i = 0; i < itemCount; i++) {
-            if (items[i]->getQuantity() < 5) {
+            if (items[i]->getQuantity() < 5) {//if the stock item quantity is less than 5 its considerd as low stock
                 items[i]->display();
             }
         }
@@ -398,7 +398,7 @@ int main() {
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
             continue;
         }
-
+//my switches
         switch (choice) {
             case 1: inventory.addItem(); break;
             case 2: inventory.updateItem(); break;
